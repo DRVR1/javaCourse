@@ -1,0 +1,11 @@
+in vscode
+ctrl + shift + x
+install "Extension Pack for Java"
+Open vscode settings (Ctrl + ,).
+Search for: Format On Save
+Check option: Editor: Format On Save
+
+or mannualy:
+download: https://github.com/google/google-java-format/releases
+
+java -jar google-java-format-1.27.0-all-deps.jar --replace YourClass.java
