@@ -1,5 +1,7 @@
 package basicJava;
 
+import basicJava.Calculator;
+
 public class Arrays {
     public static void main(String[] args) {
         // Array 1
@@ -36,6 +38,7 @@ public class Arrays {
                 System.out.print(v + " ");
             }
         }
+        System.out.println("\n");
 
         /// 5 - Jagged array
         int[][] jagged1 = new int[2][];
@@ -43,5 +46,21 @@ public class Arrays {
 
         // 6 - 3D arrays
         int[][][] a3D1 = new int[5][5][5];
+
+        // 7 - Array of objects
+        System.out.println("7 - arr of objects");
+
+        Calculator c1 = new Calculator("Calc1");
+        Calculator c2 = new Calculator("Calc2");
+
+        Calculator[] arrOfCalculators = new Calculator[2]; // Creates an array of 2 calculators
+
+        arrOfCalculators[0] = c1;
+        arrOfCalculators[1] = c2;
+
+        for (Calculator calc : arrOfCalculators) {
+            calc.printName();
+        }
+        System.out.println("\n");
     }
 }
