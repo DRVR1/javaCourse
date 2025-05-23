@@ -2,6 +2,11 @@ package basicJava;
 
 public class Strings {
     public static void main(String[] args) {
+
+        // String builder: es una clase en Java diseñada para manipular cadenas de texto
+        // de forma eficiente y mutable (es decir, sin crear nuevos objetos cada vez que
+        // cambias el contenido).
+
         String str0 = "Hello"; // Creo un objeto string , Hello se almacena en el heap y en el stack, str0
                                // apunta a esa direccion en el heap
         String str1 = "Hello"; // Se crea una nueva referencia en el stack, pero al momento de crear Hello en
@@ -13,5 +18,14 @@ public class Strings {
 
         str += " World"; // Como String es inmutable, se crea una nueva variable en el heap "Hello World"
         System.out.println(str);
+
+        StringBuffer sb = new StringBuffer("Hello");
+        System.out.println(sb.capacity()); // capacity() es el espacio reservado en caracteres de ese buffer
+
+        sb.append(" World");
+        sb.insert(0, "Java - ");
+        System.out.println(sb);
+        sb.insert(0, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ");
+        System.out.println(sb);
     }
 }
