@@ -5,6 +5,12 @@ class Phone {
     String brand;
     int memory;
 
+    public Phone() {
+        this.model = "Default model";
+        this.brand = "Default brand";
+        this.memory = 0;
+    }
+
     public Phone(String model, String brand, int memory) {
         this.model = model;
         this.brand = brand;

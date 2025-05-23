@@ -42,6 +42,27 @@ class Calculator {
     }
 }
 
+class AdvancedCalculator extends Calculator {
+    public AdvancedCalculator(String name) {
+        super(name);
+    }
+
+    public double sqrt(double value) {
+        return Math.sqrt(value);
+    }
+}
+
+class SuperAdvancedCalculator extends AdvancedCalculator {
+    public SuperAdvancedCalculator(String name) {
+        super(name);
+        System.out.println("Super calculator created");
+    }
+
+    public double power(double value, double toPower) {
+        return Math.pow((double) value, (double) toPower);
+    }
+}
+
 public class JClasses {
     public static void main(String[] args) throws ClassNotFoundException {
         Class.forName("basicJava.Calculator");
@@ -58,5 +79,8 @@ public class JClasses {
         Calculator.sharedName = "Calculator static";
         System.out.println(Calculator.sharedName);
         Calculator.printStaticName();
+
+        SuperAdvancedCalculator superAdvancedCalculator = new SuperAdvancedCalculator("superCalc");
+        System.out.println(superAdvancedCalculator.power(3, 3.4));
     }
 }
