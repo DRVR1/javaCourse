@@ -1,6 +1,6 @@
-package basics.staticc;
+package basics.finall;
 
-import basics.staticc.Pi;
+import basics.finall.Pi;
 
 public class Main {
     public static void main(String[] args) {
