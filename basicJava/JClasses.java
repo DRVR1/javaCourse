@@ -61,6 +61,10 @@ class SuperAdvancedCalculator extends AdvancedCalculator {
     public double power(double value, double toPower) {
         return Math.pow((double) value, (double) toPower);
     }
+
+    public void printName() {
+        System.out.println("im " + this.name + ". And i overrided the printName method");
+    }
 }
 
 public class JClasses {
@@ -82,5 +86,6 @@ public class JClasses {
 
         SuperAdvancedCalculator superAdvancedCalculator = new SuperAdvancedCalculator("superCalc");
         System.out.println(superAdvancedCalculator.power(3, 3.4));
+        superAdvancedCalculator.printName();
     }
 }
