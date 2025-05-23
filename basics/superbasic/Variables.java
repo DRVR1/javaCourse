@@ -1,6 +1,7 @@
-package basicJava;
-class Variables{
-    public static void main(String args[]){
+package basics.superbasic;
+
+class Variables {
+    public static void main(String args[]) {
         System.out.println("Hello world");
         char varChar = 'a';
         boolean varBool = true;
@@ -14,10 +15,11 @@ class Variables{
         int hex = 0x7FA;
 
         char ch = 'a';
-        char result = (char)(ch + 1);
+        char result = (char) (ch + 1);
         System.out.println(result);
 
-        System.out.println(varInt++); // Notar que sigue siendo 122, por ser un post increment. Esto sirve para bucles, listas, etc. 
+        System.out.println(varInt++); // Notar que sigue siendo 122, por ser un post increment. Esto sirve para
+                                      // bucles, listas, etc.
         System.out.println(++varInt); // Ahora si vale 123 (pre increment)
     }
 }

@@ -1,4 +1,4 @@
-package basicJava;
+package basics;
 
 class Phone {
     String model;

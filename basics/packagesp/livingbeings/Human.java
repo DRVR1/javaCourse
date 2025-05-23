@@ -1,6 +1,6 @@
-package basicJava.packagesPractice;
+package basics.packagesp.livingbeings;
 
-import basicJava.Hat;
+import basics.packagesp.wearing.Hat;
 
 public class Human {
     Hat hat;

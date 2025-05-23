@@ -1,8 +1,9 @@
-package basicJava;
+package basics.packagesp;
 
-import basicJava.packagesPractice.Human;
+import basics.packagesp.livingbeings.Human;
+import basics.packagesp.wearing.Hat;
 
-public class packagesPracticeTest {
+public class PackageTest {
     public static void main(String[] args) {
         Hat hat = new Hat("red");
         Human h = new Human(hat);

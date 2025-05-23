@@ -1,6 +1,6 @@
-package basicJava;
+package basics;
 
-import basicJava.Calculator;
+import basics.Calculator;
 
 public class Arrays {
     public static void main(String[] args) {

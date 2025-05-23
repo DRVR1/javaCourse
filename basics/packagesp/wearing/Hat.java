@@ -1,4 +1,4 @@
-package basicJava;
+package basics.packagesp.wearing;
 
 public class Hat {
     String color;
