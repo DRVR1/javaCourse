@@ -1,4 +1,4 @@
-package basics.temp;
+package basics.tests;
 
 // What does arr[arr.length-1].length represents in a multidimensional array?
 

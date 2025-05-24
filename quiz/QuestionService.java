@@ -10,9 +10,9 @@ public class QuestionService {
     private ArrayList<Question> questionList = new ArrayList<>();
     private int score = 0;
 
-    public void addQuestion(String id, String questionn, String op1, String op2, String op3, String op4,
+    public void addQuestion(String questionn, String op1, String op2, String op3, String op4,
             String answer) {
-        Question q = new Question(id, questionn, op1, op2, op3, op4, answer);
+        Question q = new Question(questionn, op1, op2, op3, op4, answer);
         questionList.add(q);
     }
 

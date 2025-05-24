@@ -1,4 +1,4 @@
-package basics.temp;
+package basics.tests;
 
 class Test {
 
