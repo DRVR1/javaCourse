@@ -62,5 +62,9 @@ public class Arrays {
             calc.printName();
         }
         System.out.println("\n");
+
+        // 7 - lenght of last array
+        int[][] arr7 = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+        System.out.println(arr7[arr7.length - 1][0]);
     }
 }
