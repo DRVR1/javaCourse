@@ -1,6 +1,6 @@
-package basics.interfaces;
+package basics.lambda;
 
 @FunctionalInterface
 public interface A {
-    void talkA();
+    void show();
 }
