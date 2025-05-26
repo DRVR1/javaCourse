@@ -2,5 +2,5 @@ package basics.lambda;
 
 @FunctionalInterface
 public interface A {
-    void show();
+    String salute(String name);
 }
