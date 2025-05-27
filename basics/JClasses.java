@@ -69,7 +69,7 @@ class SuperAdvancedCalculator extends AdvancedCalculator {
 
 public class JClasses {
     public static void main(String[] args) throws ClassNotFoundException {
-        Class.forName("basicJava.Calculator");
+        Class.forName("basics.Calculator");
         System.out.println("Class was loaded in memory and static block was executed.");
 
         System.out.println("Instantiating class...");
