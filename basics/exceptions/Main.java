@@ -49,6 +49,15 @@ public class Main {
 
             System.out.println("Handled exception: " + e);
         }
+
+        // Exception ducking: when a method can throw an exception, we use the keyword
+        // "throws" then the exception is passed to the caller
+        MethodsIn methodsIn = new MethodsIn();
+        try {
+            methodsIn.b();
+        } catch (Exception e) {
+            System.out.println("Exception ducking Handled!");
+        }
     }
 
 }
