@@ -3,8 +3,6 @@ package quiz;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import quiz.Question;
-
 public class QuestionService {
 
     private ArrayList<Question> questionList = new ArrayList<>();
