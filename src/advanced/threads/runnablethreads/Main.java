@@ -1,4 +1,4 @@
-package advanced.runnablethreads;
+package advanced.threads.runnablethreads;
 
 public class Main {
     public static void main(String[] args) {

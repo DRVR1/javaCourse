@@ -1,4 +1,4 @@
-package advanced.threads;
+package advanced.threads.basicthreads;
 
 public class A extends Thread {
     public void run() {

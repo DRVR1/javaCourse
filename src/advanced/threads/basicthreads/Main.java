@@ -1,4 +1,4 @@
-package advanced.threads;
+package advanced.threads.basicthreads;
 
 public class Main {
     public static void main(String[] args) {

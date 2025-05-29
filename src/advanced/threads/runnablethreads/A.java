@@ -1,4 +1,4 @@
-package advanced.runnablethreads;
+package advanced.threads.runnablethreads;
 
 public class A implements Runnable {
     public void run() {
