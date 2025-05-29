@@ -1,4 +1,4 @@
-package advanced.collections;
+package advanced.collections.basic;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -77,6 +77,26 @@ public class Main {
         System.out.println(arrayList2);
         Collections.sort(arrayList2, comparator);
         System.out.println(arrayList2);
+
+        // Custom comparator for ArrayList of strings
+        Comparator<String> comparator2 = new Comparator<String>() {
+            public int compare(String a, String b) {
+                if (a.length() > b.length()) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            }
+        };
+        ArrayList<String> arrayList3 = new ArrayList<>();
+        arrayList3.add("1");
+        arrayList3.add("123456");
+        arrayList3.add("12");
+        arrayList3.add("123");
+        arrayList3.add("12345");
+        System.out.println(arrayList3);
+        Collections.sort(arrayList3, comparator2);
+        System.out.println(arrayList3);
 
     }
 }
