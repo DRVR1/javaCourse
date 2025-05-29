@@ -1,4 +1,4 @@
-package basics.enumm;
+package basics.enumeratives;
 
 public class Car {
     private CarColor color;

@@ -1,4 +1,4 @@
-package basics.enumm;
+package basics.enumeratives;
 
 public class Main {
     public static void main(String[] args) {

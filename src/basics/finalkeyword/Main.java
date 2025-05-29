@@ -1,6 +1,6 @@
-package basics.finall;
+package basics.finalkeyword;
 
-import basics.finall.Pi;
+import basics.finalkeyword.Pi;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package basics.enumm;
+package basics.enumeratives;
 
 enum CarBrand {
     bugatti(3000, 300), chevrolet(2000, 200);
