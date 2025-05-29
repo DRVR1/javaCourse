@@ -33,8 +33,23 @@ public class Main {
 
         // Una opcion mas simple: Scanner
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingrese algo: ");
-        String str = scanner.nextLine();
-        System.out.println("Ingresado: " + str);
+        try {
+            System.out.print("input something: ");
+            String str = scanner.nextLine();
+            System.out.println("Input: " + str);
+        } catch (Exception e) {
+            // TODO: handle exception
+        } finally {
+            // scanner.close();
+            // Si cerramos el scanner ahora, no lo podemos usar mas porque cierra System.in
+        }
+
+        try (Scanner scanner2 = new Scanner(System.in)) { // Cierra el scanner (ya no se puede usar luego)
+            System.out.print("Input again: ");
+            String str = scanner2.nextLine();
+            System.out.println("input: " + str);
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
     }
 }
