@@ -3,6 +3,7 @@ package com.example.app;
 import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 /* Basic postgresql connection */
@@ -17,6 +18,13 @@ public class App {
         Connection con = null;
         try {
             con = DriverManager.getConnection(url, uname, pass); // Connect to the DB
+
+            // Inserting data using prepared statement in order to avoid SQL inyection
+            PreparedStatement pr = con.prepareStatement("INSERT INTO student (sname, sage) VALUES (?,?)");
+            pr.setString(1, "ian");
+            pr.setInt(2, 10);
+            // pr.execute();
+
             Statement st = con.createStatement(); // Handle querys to the DB
             ResultSet result = st.executeQuery("SELECT * FROM STUDENT;");
 
@@ -24,7 +32,6 @@ public class App {
                            // row was found
             System.out.println("Name: " + result.getString("sname"));
             System.out.println("Age: " + result.getString("sage"));
-
             // Another way to print results:
             while (result.next()) {
                 System.out.println("--------------------");
