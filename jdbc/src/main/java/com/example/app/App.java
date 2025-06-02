@@ -23,13 +23,16 @@ public class App {
             PreparedStatement pr = con.prepareStatement("INSERT INTO student (sname, sage) VALUES (?,?)");
             pr.setString(1, "ian");
             pr.setInt(2, 10);
-            // pr.execute();
 
             Statement st = con.createStatement(); // Handle querys to the DB
             ResultSet result = st.executeQuery("SELECT * FROM STUDENT;");
 
-            result.next(); // Move the cursor to the first row (it starts at index -1). Returns false if no
-                           // row was found
+            // Move the cursor to the first row (it starts at index -1). Returns false if no
+            // row was found)
+            if (!result.next()) {
+                pr.execute(); // if the table was empty, execute the insert statement for testing
+            }
+
             System.out.println("Name: " + result.getString("sname"));
             System.out.println("Age: " + result.getString("sage"));
             // Another way to print results:
@@ -39,7 +42,9 @@ public class App {
                 System.out.println("Age: " + result.getInt("sage"));
             }
 
-        } catch (Exception e) {
+        } catch (
+
+        Exception e) {
             e.printStackTrace();
         }
 
