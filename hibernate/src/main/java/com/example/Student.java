@@ -18,6 +18,9 @@ public class Student {
         this.sage = sage;
     }
 
+    public Student() {
+    }
+
     public long getId() {
         return id;
     }
