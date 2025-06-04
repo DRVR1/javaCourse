@@ -1,27 +1,20 @@
 package com.example;
 
-import java.util.List;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Student {
+public class Laptop {
 
     @Id
     private long id;
-
-    private String sname;
-    private int sage;
-
-    @OneToMany
-    private List<Laptop> laptops;
-
+    private String brand;
 }

@@ -1,9 +1,14 @@
 package com.example;
 
 import org.hibernate.SessionFactory;
+
+import java.util.Arrays;
+
 import org.hibernate.Session;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.Transaction;
+
+// Se crean 2 laptops, un estudiante con la lista de laptops, se edita el nombre y luego se elimina al estudiante.
 
 public class Main {
     public static void main(String[] args) {
@@ -12,13 +17,28 @@ public class Main {
         // Config
         Configuration cfg = new Configuration();
         cfg.addAnnotatedClass(Student.class);
+        cfg.addAnnotatedClass(Laptop.class);
         cfg.configure();
         // Build and open session
         SessionFactory sf = cfg.buildSessionFactory();
         Session session = sf.openSession();
 
+        // Create and save new laptops
+        Laptop l1 = new Laptop(1, "HP");
+        Laptop l2 = new Laptop(2, "DELL");
+
+        // Laptops must be saved before saving the student
+        try {
+            Transaction transaction = session.beginTransaction();
+            session.persist(l1);
+            session.persist(l2);
+            transaction.commit();
+        } catch (Exception e) {
+            System.out.println("Error saving laptops: " + e);
+        }
+
         // Create a new student to work with
-        Student s1 = new Student(126, "ian", 100);
+        Student s1 = new Student(127, "ian", 54, Arrays.asList(l1, l2));
 
         // Create
         // Save the student
