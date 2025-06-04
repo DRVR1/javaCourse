@@ -1,18 +1,24 @@
 package com.example;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import lombok.Data;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Laptop {
-
+public class ClassRoom {
     @Id
     private long id;
-    private String brand;
+    private String topic;
+
+    @ManyToMany(mappedBy = "classRooms")
+    private List<Student> students;
 }

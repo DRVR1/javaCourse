@@ -18,6 +18,8 @@ public class Main {
         Configuration cfg = new Configuration();
         cfg.addAnnotatedClass(Student.class);
         cfg.addAnnotatedClass(Laptop.class);
+        cfg.addAnnotatedClass(Passport.class);
+        cfg.addAnnotatedClass(ClassRoom.class);
         cfg.configure();
         // Build and open session
         SessionFactory sf = cfg.buildSessionFactory();
@@ -37,8 +39,23 @@ public class Main {
             System.out.println("Error saving laptops: " + e);
         }
 
+        // Same with passsport
+        Passport p1 = new Passport(1, "Argentina");
+        try {
+            Transaction transaction = session.beginTransaction();
+            session.persist(p1);
+            transaction.commit();
+        } catch (Exception e) {
+            System.out.println("Error saving passwport: " + e);
+        }
+
+        // TODO fix classroom
+        // Same with a classRoom
+        ClassRoom c1 = new ClassRoom(1, "History", null);
+
+        // TODO fix classroom
         // Create a new student to work with
-        Student s1 = new Student(127, "ian", 54, Arrays.asList(l1, l2));
+        Student s1 = new Student(127, "ian", 54, p1, Arrays.asList(l1, l2), null);
 
         // Create
         // Save the student
@@ -69,7 +86,7 @@ public class Main {
         // Delete
         try {
             Transaction transaction = session.beginTransaction();
-            session.remove(s2);
+            // session.remove(s2);
             transaction.commit();
 
         } catch (Exception e) {
