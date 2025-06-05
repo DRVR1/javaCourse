@@ -2,6 +2,7 @@ package com.example;
 
 import org.hibernate.SessionFactory;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.hibernate.Session;
@@ -46,17 +47,32 @@ public class Main {
             session.persist(p1);
             transaction.commit();
         } catch (Exception e) {
-            System.out.println("Error saving passwport: " + e);
+            System.out.println("Error saving passport: " + e);
         }
 
-        // TODO fix classroom
         // Same with a classRoom
-        ClassRoom c1 = new ClassRoom(1, "History", null);
+        ClassRoom c1 = ClassRoom
+                .builder()
+                .topic("Maths")
+                .students(new ArrayList<>())
+                .build();
+        try {
+            Transaction transaction = session.beginTransaction();
+            session.persist(c1);
+            transaction.commit();
+        } catch (Exception e) {
+            System.out.println("Error saving classroom: " + e);
+        }
 
-        // TODO fix classroom
         // Create a new student to work with
-        Student s1 = new Student(127, "ian", 54, p1, Arrays.asList(l1, l2), null);
-
+        Student s1 = Student
+                .builder()
+                .sname("ian")
+                .sage(55)
+                .passport(p1)
+                .laptops(Arrays.asList(l1, l2))
+                .classRooms(Arrays.asList(c1))
+                .build();
         // Create
         // Save the student
         try {
@@ -83,7 +99,7 @@ public class Main {
             System.out.println("Error updating student: " + e);
         }
 
-        // Delete
+        // Delete the student
         try {
             Transaction transaction = session.beginTransaction();
             // session.remove(s2);
