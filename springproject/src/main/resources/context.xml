@@ -3,5 +3,6 @@
 
 <beans>
     <bean id="alien" class="com.example.Alien">
+        <property name=""></property>
     </bean>
 </beans>
