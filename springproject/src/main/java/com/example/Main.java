@@ -8,5 +8,6 @@ public class Main {
         ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
         Alien alien = (Alien) context.getBean("alien");
         alien.code();
+        alien.useComputer();
     }
 }
