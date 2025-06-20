@@ -13,6 +13,9 @@ public class Alien {
         this.age = age;
     }
 
+    public Alien() {
+    }
+
     public void setName(String name) {
         this.name = name;
     }
