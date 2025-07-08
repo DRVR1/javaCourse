@@ -1,8 +1,14 @@
 package com.example;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Alien {
     private String name;
     private int age;
+
+    @Autowired
     private Computer lap1;
 
     public void code() {
