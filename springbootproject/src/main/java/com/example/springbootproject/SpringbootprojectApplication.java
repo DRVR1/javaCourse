@@ -10,7 +10,7 @@ public class SpringbootprojectApplication {
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(SpringbootprojectApplication.class, args);
 		Alien alien = context.getBean(Alien.class);
-		alien.code();
+		alien.compile();
 	}
 
 }
