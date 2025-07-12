@@ -15,7 +15,12 @@ public class Springbootproject2Application {
 		student.setAvg(100);
 		student.setName("ian");
 
-		System.out.println("Average: " + student.getAvg());
+		System.out.println("[Controller] Average: " + student.getAvg());
+		System.out.println("[Controller] Name: " + student.getName());
+
+		StudentService studentService = context.getBean(StudentService.class);
+		studentService.save(student);
+		System.out.println(studentService.getAll().size());
 	}
 
 }
