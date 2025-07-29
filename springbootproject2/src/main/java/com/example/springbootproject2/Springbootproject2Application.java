@@ -20,6 +20,7 @@ public class Springbootproject2Application {
 
 		StudentService studentService = context.getBean(StudentService.class);
 		studentService.save(student);
+		System.out.println(studentService.getAll());
 		System.out.println(studentService.getAll().size());
 	}
 
