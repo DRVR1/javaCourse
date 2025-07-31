@@ -16,6 +16,7 @@ public class App {
         Tomcat.addServlet(context, "HelloServlet", new HelloServlet());
         context.addServletMappingDecoded("/hello", "HelloServlet");
         // Iniciar
+        tomcat.getConnector();
         tomcat.start();
         tomcat.getServer().await();
     }
