@@ -17,7 +17,19 @@ public class JobService {
         return jobRepo.getAllJobs();
     }
 
-    public Job getJob(long id) {
-        return jobRepo.getJob(id);
+    public Job getJobById(long id) {
+        return jobRepo.getJobById(id);
+    }
+
+    public Job createJob(Job job) {
+        return jobRepo.createJob(job);
+    }
+
+    public Job updateJob(Job job) {
+        return jobRepo.updateJob(job);
+    }
+
+    public boolean deleteJob(Job job) {
+        return jobRepo.deleteJob(job);
     }
 }

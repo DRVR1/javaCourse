@@ -22,12 +22,38 @@ public class JobRepo {
         return jobs;
     }
 
-    public Job getJob(long id) {
+    public Job getJobById(long id) {
         for (Job job : jobs) {
             if (job.getId() == id) {
                 return job;
             }
         }
         return null;
+    }
+
+    public Job createJob(Job job) {
+        jobs.add(job);
+        return getJobById(job.getId());
+    }
+
+    public Job updateJob(Job job) {
+        for (Job searchedJob : jobs) {
+            if (searchedJob.getId() == job.getId()) {
+                searchedJob.setName(job.getName());
+                searchedJob.setSalary(job.getSalary());
+                return searchedJob;
+            }
+        }
+        return null;
+    }
+
+    public boolean deleteJob(Job job) {
+        for (Job searchedJob : jobs) {
+            if (searchedJob.getId() == job.getId()) {
+                jobs.remove(searchedJob);
+                return true;
+            }
+        }
+        return false;
     }
 }
