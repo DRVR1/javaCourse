@@ -16,4 +16,8 @@ public class JobService {
     public List<Job> getAllJobs() {
         return jobRepo.getAllJobs();
     }
+
+    public Job getJob(long id) {
+        return jobRepo.getJob(id);
+    }
 }
