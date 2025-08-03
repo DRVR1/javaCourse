@@ -13,8 +13,7 @@ public class HelloController {
 
     @GetMapping("/")
     public String greet(CsrfToken csrfToken, HttpServletRequest request) {
-        return "Hello world! " + request.getSession().getId() + " token: "
-                + csrfToken.getToken();
+        return "Hello world! " + request.getSession().getId();
     }
 
     @PostMapping("/post")
