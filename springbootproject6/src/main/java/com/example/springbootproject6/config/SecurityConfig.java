@@ -17,6 +17,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
+import com.example.springbootproject6.service.MyUserDetailsService;
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -33,7 +35,7 @@ public class SecurityConfig {
     }
 
     @Autowired
-    private UserDetailsService myUserDetailsService;
+    private MyUserDetailsService myUserDetailsService;
 
     @Bean
     public AuthenticationProvider authenticationProvider() {
