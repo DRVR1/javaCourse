@@ -7,13 +7,13 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.example.springbootproject6.entity.User;
+import com.example.springbootproject6.entity.AppUser;
 
 public class UserDetailsImplementation implements UserDetails {
 
-    private User user;
+    private AppUser user;
 
-    public UserDetailsImplementation(User user) {
+    public UserDetailsImplementation(AppUser user) {
         this.user = user;
     }
 
