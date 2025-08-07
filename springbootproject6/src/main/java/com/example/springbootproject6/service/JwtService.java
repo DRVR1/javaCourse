@@ -20,19 +20,18 @@ public class JwtService {
 
         Map<String, Object> claims = new HashMap<>();
 
-        Jwts.builder()
+        return Jwts.builder()
                 .claims(claims)
                 .subject(username)
                 .issuedAt(new Date(System.currentTimeMillis()))
                 .expiration(new Date(System.currentTimeMillis() + 1000 * 60 * 4))
                 .signWith(getKey(), SignatureAlgorithm.HS256)
                 .compact();
-
-        return "String";
     }
 
     private Key getKey() {
-        byte[] keyBytes = Decoders.BASE64.decode("Secret Key");
+        byte[] keyBytes = Decoders.BASE64
+                .decode("Secretfjoiwf3hfui3fn34iufhy39fgn4vn94398nvg3h895vn34h9gv8374gh937vg3hvm9g57Key");
         return Keys.hmacShaKeyFor(keyBytes);
     }
 
