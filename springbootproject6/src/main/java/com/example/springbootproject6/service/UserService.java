@@ -1,6 +1,10 @@
 package com.example.springbootproject6.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +20,14 @@ public class UserService {
     private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(10);
 
     public AppUser save(AppUser user) {
+
         AppUser newUser = user;
+
+        // Pasword
         newUser.setPassword(encoder.encode(user.getPassword()));
+
+        System.out.println(newUser.toString());
+
         return repository.save(newUser);
     }
 

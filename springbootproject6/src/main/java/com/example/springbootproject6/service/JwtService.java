@@ -8,11 +8,7 @@ import io.jsonwebtoken.security.Keys;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
-import javax.crypto.KeyGenerator;
-import javax.crypto.SecretKey;
 import java.security.Key;
-import java.security.NoSuchAlgorithmException;
-import java.util.Base64;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,7 +32,7 @@ public class JwtService {
 
     private Key getKey() {
         byte[] keyBytes = Decoders.BASE64
-                .decode("");
+                .decode("796782gf3678bfv28hfnnbgienbgwey8fbn4287b4f287bfngeyufb82437bn");
         return Keys.hmacShaKeyFor(keyBytes);
     }
 
@@ -51,7 +47,7 @@ public class JwtService {
     }
 
     private Claims extractAllClaims(String token) {
-        return Jwts.parserBuilder()
+        return Jwts.parser()
                 .setSigningKey(getKey())
                 .build().parseClaimsJws(token).getBody();
     }

@@ -27,12 +27,12 @@ public class HelloController {
     UserService userService;
 
     @GetMapping("/")
-    public String greet(CsrfToken csrfToken, HttpServletRequest request) {
-        return "Hello world! " + request.getSession().getId();
+    public String greet(HttpServletRequest request) {
+        return "Hello world! ";
     }
 
-    @PostMapping("/registrar")
-    public AppUser postMethodName(@RequestBody AppUser user) {
+    @PostMapping("/register")
+    public AppUser register(@RequestBody AppUser user) {
         return userService.save(user);
     }
 
@@ -45,6 +45,9 @@ public class HelloController {
     @PostMapping("/login")
     public String login(@RequestBody AppUser user) {
 
+        // Antes de generar un token correspondiente al nombre de usuario, debemos
+        // validar que las credenciales sean correctas. auth manager va a acceder al
+        // UserDetailsService para validar esto.
         Authentication auth = authenticationManager
                 .authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
 

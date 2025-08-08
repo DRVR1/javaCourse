@@ -1,8 +1,10 @@
 package com.example.springbootproject6.entity;
 
-import org.springframework.stereotype.Component;
+import java.util.List;
 
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -22,4 +24,6 @@ public class AppUser {
 
     private String username;
     private String password;
+    @ElementCollection(fetch = FetchType.EAGER)
+    private List<String> stringRoles;
 }

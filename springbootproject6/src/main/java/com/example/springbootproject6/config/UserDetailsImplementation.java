@@ -1,7 +1,8 @@
 package com.example.springbootproject6.config;
 
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
+import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -19,7 +20,11 @@ public class UserDetailsImplementation implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.singleton(new SimpleGrantedAuthority("USER"));
+        List<SimpleGrantedAuthority> roleList = new ArrayList<>();
+        for (String role : user.getStringRoles()) {
+            roleList.add(new SimpleGrantedAuthority(role));
+        }
+        return roleList;
     }
 
     @Override
