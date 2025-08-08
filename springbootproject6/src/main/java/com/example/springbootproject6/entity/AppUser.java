@@ -25,5 +25,5 @@ public class AppUser {
     private String username;
     private String password;
     @ElementCollection(fetch = FetchType.EAGER)
-    private List<String> stringRoles;
+    private List<String> stringRoles; // ROLE_* obligatorio, sino no se puede acceder al recurso. Ejemplo: ROLE_ADMIN
 }
