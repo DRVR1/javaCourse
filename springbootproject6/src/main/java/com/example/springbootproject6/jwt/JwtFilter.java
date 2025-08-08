@@ -1,4 +1,4 @@
-package com.example.springbootproject6.config;
+package com.example.springbootproject6.jwt;
 
 import java.io.IOException;
 
@@ -10,8 +10,7 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.example.springbootproject6.service.JwtService;
-import com.example.springbootproject6.service.MyUserDetailsService;
+import com.example.springbootproject6.security.MyUserDetailsService;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

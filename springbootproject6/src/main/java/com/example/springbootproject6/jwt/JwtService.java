@@ -1,10 +1,12 @@
-package com.example.springbootproject6.service;
+package com.example.springbootproject6.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,13 @@ import java.util.function.Function;
 @Service
 public class JwtService {
 
+    // Obtener los valores de application.properties
+    @Value("${jwt.secretKey}")
+    private String secretKey;
+
+    @Value("${jwt.tokenExpirationMs}")
+    private long tokenExpirationMs;
+
     public String generateToken(String username) {
 
         Map<String, Object> claims = new HashMap<>();
@@ -25,14 +34,14 @@ public class JwtService {
                 .claims(claims)
                 .subject(username)
                 .issuedAt(new Date(System.currentTimeMillis()))
-                .expiration(new Date(System.currentTimeMillis() + 1000 * 60 * 4))
+                .expiration(new Date(System.currentTimeMillis() + tokenExpirationMs))
                 .signWith(getKey(), SignatureAlgorithm.HS256)
                 .compact();
     }
 
     private Key getKey() {
         byte[] keyBytes = Decoders.BASE64
-                .decode("796782gf3678bfv28hfnnbgienbgwey8fbn4287b4f287bfngeyufb82437bn");
+                .decode(secretKey);
         return Keys.hmacShaKeyFor(keyBytes);
     }
 

@@ -1,4 +1,4 @@
-package com.example.springbootproject6.config;
+package com.example.springbootproject6.security;
 
 import java.util.ArrayList;
 import java.util.Collection;

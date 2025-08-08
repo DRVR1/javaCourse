@@ -3,7 +3,7 @@ package com.example.springbootproject6.controller;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.springbootproject6.entity.AppUser;
-import com.example.springbootproject6.service.JwtService;
+import com.example.springbootproject6.jwt.JwtService;
 import com.example.springbootproject6.service.UserService;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -11,7 +11,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.security.core.Authentication;
 
