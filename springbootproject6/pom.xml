@@ -13,7 +13,7 @@
 	<artifactId>springbootproject6</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springbootproject6</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Proyecto template con spring data JPA, spring web, spring security (jwt token), h2/postgresql</description>
 	<url />
 	<licenses>
 		<license />
