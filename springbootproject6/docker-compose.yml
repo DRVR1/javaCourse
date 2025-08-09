@@ -1,0 +1,30 @@
+services:
+  postgres:
+    # Downloads the postgres image
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - sql_app_name:/var/lib/postgresql/data
+    shm_size: 128mb
+    environment:
+      POSTGRES_PASSWORD: 38mOj2iGcnulVtni2RAMSCx7FBcH
+      POSTGRES_USER: sa
+      POSTGRES_DB: dbName
+
+  app:
+    image: app_name
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/dbName
+      - SPRING_DATASOURCE_USERNAME=sa
+      - SPRING_DATASOURCE_PASSWORD=38mOj2iGcnulVtni2RAMSCx7FBcH
+      
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+
+      
+volumes:
+  sql_app_name:
