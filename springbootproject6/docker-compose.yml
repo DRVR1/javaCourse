@@ -32,20 +32,20 @@ services:
     expose:
       - "8080"
     # Descomentar para depuracion y poder acceder directamente al backend sin pasar por nginx
-    # ports:
-    #   - "8080:8080"
+    ports:
+      - "8080:8080"
 
 # Opcional: integra una imagen existente de frontend (con nginx) que escucha en el puerto 80.
 # Esta imagen de frontend react+vite ya viene con un nginx escuchando en el puerto 80 el cual devuelve el front construido.
-  front:
-    image: frontend 
-    ports:
-      - "80:80" 
-    networks:
-      - internal
-      - public
-    depends_on:
-      - back
+  # front:
+  #   image: frontend 
+  #   ports:
+  #     - "80:80" 
+  #   networks:
+  #     - internal
+  #     - public
+  #   depends_on:
+  #     - back
 
 volumes:
   sql_app_name:
