@@ -1,14 +1,14 @@
-package com.example.microservice1;
+package com.example.microservice2;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-//http://localhost:8081/swagger-ui/index.html
 @RestController
+// http://localhost:8082/swagger-ui/index.html
 public class Controller {
 
     @GetMapping("/")
     public String helloWorld() {
-        return "service 1 - hello world";
+        return "Hello World - Service 2";
     }
 }
