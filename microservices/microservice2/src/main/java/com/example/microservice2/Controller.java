@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 // http://localhost:8082/swagger-ui/index.html
 public class Controller {
 
-    @GetMapping("/")
-    public String helloWorld() {
+    @GetMapping("/micro2")
+    public String micro2() {
         return "Hello World - Service 2";
     }
 }
