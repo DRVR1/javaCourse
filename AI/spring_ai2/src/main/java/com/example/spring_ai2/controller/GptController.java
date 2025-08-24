@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 // http://localhost:8080/swagger-ui/index.html
 // Aparte de descomentar, hay que descomentar la dependencia en pom.xml, y configurar la api key en application.properties
 @RestController
-public class MainController {
+public class GptController {
 
-//    @Autowired
-//    private OpenAiChatModel chatModel;
-//
-//    //@GetMapping("/ask")
-//    public String ask(@RequestParam String prompt) {
-//        String response = chatModel.call(prompt);
-//        return response;
-//    }
+    // @Autowired
+    // private OpenAiChatModel chatModel;
+    //
+    // //@GetMapping("/ask")
+    // public String ask(@RequestParam String prompt) {
+    // String response = chatModel.call(prompt);
+    // return response;
+    // }
 }
